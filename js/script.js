@@ -7,11 +7,11 @@ document.addEventListener('scroll', () => {
 
 
 $(window).ready(function() {
-    // $(window).scroll(function() {
-    //     if($(window).scrollTop() > 1) {
-
-    //     }
-    // }) 
+    $(window).scroll(function() {
+        // $(window).scrollTop() > 50) {
+            $(".re").addClass(".scroll");
+        // }
+    }) 
      
 
 

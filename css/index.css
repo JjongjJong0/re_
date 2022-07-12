@@ -56,6 +56,8 @@ p {
   width: 100%;
   max-width: 1024px;
   margin: 0 auto;
+  padding: 0 15px;
+  background-color: #87ff99;
 }
 
 header {
@@ -129,19 +131,30 @@ main .header-logo div.grid .logo h2 a {
   color: #fff;
 }
 
+main .header-logo div.grid .logo h2 a img {
+  width: 500px;
+}
+
+main .header-logo div.grid .logo h2 a img.scroll {
+  translate: scaleX(50%);
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
 main .slide {
+  position: relative;
   overflow: hidden;
 }
 
 main .slide .inbox {
-  padding: 30px 4%;
+  margin: 7% 0 5%;
   width: 300%;
 }
 
 main .slide .inbox a {
   display: inline-block;
   margin-right: 20px;
-  font-size: 2.95em;
+  font-size: 3em;
   font-family: "ITC Garamond Std";
   font-weight: normal;
 }
@@ -156,7 +169,7 @@ main .slide .inbox a:last-child {
 
 @media screen and (min-width: 768px) {
   main .slide .inbox a {
-    font-size: 3.70em;
+    font-size: 5em;
   }
 }
 
@@ -164,8 +177,11 @@ main .slide sup {
   font-size: medium;
 }
 
-main .slide ul {
+main .slide .slideContainer {
   position: relative;
+}
+
+main .slide .slideContainer ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -173,33 +189,34 @@ main .slide ul {
 }
 
 @media screen and (min-width: 768px) {
-  main .slide ul {
+  main .slide .slideContainer ul {
     width: 400%;
   }
 }
 
 @media screen and (min-width: 1024px) {
-  main .slide ul {
+  main .slide .slideContainer ul {
     width: 200%;
   }
 }
 
-main .slide ul li a {
-  padding: 0 4%;
+main .slide .slideContainer ul li {
+  margin: 0 0.5%;
+  background-color: aqua;
 }
 
-main .slide ul li a img {
+main .slide .slideContainer ul li a img {
   width: 100%;
   height: initial;
   padding-bottom: 5px;
 }
 
-main .slide ul li a p {
+main .slide .slideContainer ul li a p {
   line-height: 20px;
 }
 
 @media screen and (min-width: 768px) {
-  main .slide ul li a p {
+  main .slide .slideContainer ul li a p {
     padding-right: 25%;
     font-size: 1.30em;
     line-height: 25px;
@@ -207,7 +224,7 @@ main .slide ul li a p {
 }
 
 @media screen and (min-width: 1024px) {
-  main .slide ul li a p {
+  main .slide .slideContainer ul li a p {
     padding-right: 0;
     padding-bottom: 5px;
     font-size: 1.0em;
@@ -215,7 +232,7 @@ main .slide ul li a p {
   }
 }
 
-main .slide ul li a strong {
+main .slide .slideContainer ul li a strong {
   display: none;
   padding: 5px 4%;
   font-size: 0.72em;
@@ -225,10 +242,44 @@ main .slide ul li a strong {
 }
 
 @media screen and (min-width: 1024px) {
-  main .slide ul li a strong {
+  main .slide .slideContainer ul li a strong {
     display: inline;
     line-height: 30px;
   }
+}
+
+main .slide .slideContainer .btnL {
+  position: absolute;
+  top: 45%;
+  left: 20px;
+}
+
+main .slide .slideContainer .btnL button {
+  border: none;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  background-color: transparent;
+}
+
+main .slide .slideContainer .btnL img {
+  width: 100%;
+}
+
+main .slide .slideContainer .btnR {
+  position: absolute;
+  top: 45%;
+  right: 20px;
+}
+
+main .slide .slideContainer .btnR button {
+  border: none;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  background-color: transparent;
+}
+
+main .slide .slideContainer .btnR img {
+  width: 100%;
 }
 
 .marquee {

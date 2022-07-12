@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 3000px;
+        }
+
+        #imgBox {
+            position: fixed;
+            width: 500px;
+            height: 300px;
+            background-color: aqua;
+        }
+
+        #re {
+            width: 100%;
+        }
+        .scrolldown {
+            transform: scaleX(0.5) scaleY(0.5);
+            transition: all 1s;
+        }
+        .scrollup {
+            transform: scaleX(1) scaleY(1);
+            transition: all 1s;
+        }
+    </style>
+    <script src="./js/jquery.js"></script>
+    <script>
+        $(window).ready(function() {
+            $(window).scroll(function() {
+                if($(window).scrollTop() > 200) {
+                    console.log($(window).scrollTop());
+                    $("#imgBox").addClass("scrolldown");
+                    // $(".re").animate({"width" : "100px"}, 1000);
+                } else {
+                    // $("#imgBox").removeClass("scrolldown");
+                    // $("#imgBox").addClass("scrollup");
+                    $("#imgBox").animate({"width" : "500px"}, 1000);
+                }
+
+                // if($(window).scrollTop() < 200) {
+                //     console.log($(window).scrollTop());
+                //     // $(".re").addClass(".scroll");
+                //     $(".re").animate({"width" : "1000px"}, 1000);
+                // }
+                
+
+        //         if($(window).scrollTop() + 400 > nav) {
+        //     $("nav").addClass("fixed");
+        //     $("nav").css("top",200)
+        //   }
+        //   else {
+        //     $("nav").removeClass("fixed");
+        //     $("nav").css("top",0)
+        //   }
+            })
+        })
+    </script>
+</head>
+<body>
+    <div id="imgBox">
+        <img id="re" src="./images/re.svg" alt="re" />
+    </div>
+    <p class="txt">1</p>
+</body>
+</html>

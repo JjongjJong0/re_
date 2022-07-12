@@ -7,7 +7,8 @@
     width: 100%;
     max-width: 1024px;
     margin: 0 auto;
-    // background-color: rgb(135, 255, 153);
+    padding: 0 15px;
+    background-color: rgb(135, 255, 153);
 }
 
 // header
@@ -77,21 +78,30 @@ main {
                     }
                     a {
                         color: $color-base;
+                        img {
+                            width: 500px;
+                            &.scroll {
+                                translate: scaleX(50%);
+                                transition: all 1s;
+                            }
+                        }
                     }
+
                 }
             }
         }
     }
     .slide {
+        position: relative;
         overflow: hidden;
         .inbox {
-            padding: 30px 4%;
+            margin: 7% 0 5%;
             width: 300%;
             a {
                 display: inline-block;
                 margin-right: 20px;
                 font: {
-                    size: 2.95em;
+                    size: 3em;
                     family: $font-sub;
                     weight: normal;
                 }
@@ -104,7 +114,7 @@ main {
 
                 @include responsive(tablet-screens) {
                     font: {
-                        size: 3.70em;
+                        size: 5em;
                     }
                 }
             }
@@ -112,57 +122,95 @@ main {
         sup {
             font-size: medium;
         }
-        ul {
+        .slideContainer {
             position: relative;
-            display: flex;
-            width: 800%;
-            @include responsive(tablet-screens) {
-                width: 400%;
-            }
-            @include responsive(pc-screens) {
-                width: 200%;
-            }
-            li {
-                a {
-                    padding: 0 4%;
-                    img {
-                        width: 100%;
-                        height: initial;
-                        padding-bottom: 5px;
-                    }
-                    p {
-                       line-height: 20px;
-                       @include responsive(tablet-screens) {
-                            padding-right: 25%;
-                            font-size: 1.30em;
-                            line-height: 25px;
-                        }
+            ul {
+                display: flex;
+                width: 800%;
+                @include responsive(tablet-screens) {
+                    width: 400%;
+                }
+                @include responsive(pc-screens) {
+                    width: 200%;
+                }
+                li {
+                    margin: 0 0.5%;
+                    background-color: aqua;
+                    a {
+                        // padding: 0 4%;
                         @include responsive(pc-screens) {
-                            padding-right: 0;
+                            // padding-right: 15px;
+                            // padding: 0 15px;
+                        }
+                        img {
+                            width: 100%;
+                            height: initial;
                             padding-bottom: 5px;
-                            font-size: 1.0em;
-                            line-height: 20px;
                         }
-                   }
-                   strong {
-                        display: none;
-                        padding: 5px 4%;
-                        font: {
-                            size: 0.72em;
-                            weight: normal;
-                        }
-                        border: 1px solid;
-                        border-radius: 100px;
-                        @include responsive(pc-screens) {
-                            display: inline;
-                            line-height: 30px;
+                        p {
+                           line-height: 20px;
+                           @include responsive(tablet-screens) {
+                                padding-right: 25%;
+                                font-size: 1.30em;
+                                line-height: 25px;
+                            }
+                            @include responsive(pc-screens) {
+                                padding-right: 0;
+                                padding-bottom: 5px;
+                                font-size: 1.0em;
+                                line-height: 20px;
+                            }
+                       }
+                       strong {
+                            display: none;
+                            padding: 5px 4%;
+                            font: {
+                                size: 0.72em;
+                                weight: normal;
+                            }
+                            border: 1px solid;
+                            border-radius: 100px;
+                            @include responsive(pc-screens) {
+                                display: inline;
+                                line-height: 30px;
+                            }
                         }
                     }
+                }
+            }
+
+            .btnL {
+                position: absolute;
+                top: 45%;
+                left: 20px;
+                button {
+                    border: none;
+                    transform: translateY(-50%);
+                    background-color: transparent;
+                }
+                img {
+                    width: 100%;
+                }
+            }
+
+            .btnR {
+                position: absolute;
+                top: 45%;
+                right: 20px;
+                button {
+                    border: none;
+                    transform: translateY(-50%);
+                    background-color: transparent;
+                }
+                img {
+                    width: 100%;
                 }
             }
         }
     }
 }
+
+
 
 .marquee {
     overflow: hidden;
