@@ -24,9 +24,8 @@ a {
 }
 
 h1 {
-  font-size: 15em;
-  font-family: Garamond;
-  font-weight: normal;
+  font-size: 1.25em;
+  font-family: "Microsoft Sans Serif";
 }
 
 h2 {
@@ -60,36 +59,14 @@ p {
 }
 
 header {
-  position: relative;
+  position: fixed;
   width: 100%;
-  height: 700px;
-  background: url(../images/main1.jpg);
-  background-size: cover;
-  background-position: center;
+  z-index: 100;
 }
 
-@media screen and (min-width: 1024px) {
-  header {
-    background: url(../images/main2.jpg);
-    background-size: cover;
-  }
-}
-
-header div.grid .logo {
-  position: absolute;
-  top: 200px;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-}
-
-header div.grid .logo h1 a {
-  color: #fff;
-}
-
-header h2 {
+header .main-menu h1 {
   float: left;
   margin: 20px 20px;
-  font-size: 1.25em;
   color: #fff;
 }
 
@@ -115,6 +92,41 @@ header .order button:hover {
 
 header .gnb {
   display: none;
+}
+
+main .header-logo .back {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100vh;
+  background: url(../images/main1.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+@media screen and (min-width: 1024px) {
+  main .header-logo .back {
+    background: url(../images/main2.jpg);
+    background-size: cover;
+  }
+}
+
+main .header-logo div.grid .logo {
+  position: absolute;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  left: 50%;
+  bottom: 5%;
+}
+
+main .header-logo div.grid .logo h2 {
+  font-size: 15em;
+  font-family: Garamond;
+  font-weight: normal;
+}
+
+main .header-logo div.grid .logo h2 a {
+  color: #fff;
 }
 
 main .slide {
@@ -219,6 +231,50 @@ main .slide ul li a strong {
   }
 }
 
+.marquee {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.marquee .belief {
+  -webkit-animation: marquee infinite 10s both linear;
+          animation: marquee infinite 10s both linear;
+}
+
+@media screen and (min-width: 1024px) {
+  .marquee .belief {
+    -webkit-animation: marquee infinite 23s both linear;
+            animation: marquee infinite 23s both linear;
+  }
+}
+
+.marquee .belief span {
+  font-size: 7.0em;
+}
+
+@-webkit-keyframes marquee {
+  from {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  to {
+    -webkit-transform: translateX(-100vw);
+            transform: translateX(-100vw);
+  }
+}
+
+@keyframes marquee {
+  from {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  to {
+    -webkit-transform: translateX(-100vw);
+            transform: translateX(-100vw);
+  }
+}
+
 .belief {
   padding-top: 55px;
 }
@@ -251,13 +307,7 @@ main .slide ul li a strong {
   .contents .delivery .text-box {
     float: left;
     width: 45%;
-    margin-top: 150px;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .contents .delivery .text-box {
-    margin-top: 200px;
+    margin-top: 25%;
   }
 }
 
@@ -324,13 +374,7 @@ main .slide ul li a strong {
   .contents .ethos .text-box2 {
     float: right;
     width: 45%;
-    margin-top: 100px;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .contents .ethos .text-box2 {
-    margin-top: 170px;
+    margin-top: 25%;
   }
 }
 
